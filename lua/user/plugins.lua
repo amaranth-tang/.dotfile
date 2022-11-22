@@ -145,10 +145,11 @@ return require('packer').startup(function(use)
 
     use "terrortylor/nvim-comment"  -- comment/uncomment command
     use 'ethanholz/nvim-lastplace' -- auto return back to the last modified positon when open a file
+    use "kylechui/nvim-surround" -- surround selections, stylishly
     use {
         'phaazon/hop.nvim',
         branch = 'v2', -- optional but strongly recommended
-    }
+    } -- enhance the native motions of vim
     -- use "kevinhwang91/nvim-bqf" -- better quickfix but not support telescope for now
     use "folke/trouble.nvim" -- pretty list for showing diagnostics, references, telescope results, quickfix and location lists
     use "lewis6991/hover.nvim" -- similar to vim.lsp.buf.hover

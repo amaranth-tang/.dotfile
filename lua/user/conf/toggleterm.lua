@@ -121,3 +121,14 @@ function _HTOP_TOGGLE()
 	htop:toggle()
 end
 vim.api.nvim_set_keymap("n", "<leader>ht", "<cmd>lua _HTOP_TOGGLE()<CR>", {noremap = true, silent = true})
+
+-- mdbook
+local mdbook = Terminal:new({
+    cmd = "mdbook serve ..",
+    direction = 'float',
+    hidden = true,
+})
+function _MDBOOK_TOGGLE()
+	mdbook:toggle()
+end
+vim.api.nvim_set_keymap("n", "<leader>md", "<cmd>lua _MDBOOK_TOGGLE()<CR>", {noremap = true, silent = true})

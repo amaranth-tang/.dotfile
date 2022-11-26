@@ -120,6 +120,7 @@ return require('packer').startup(function(use)
     use {"akinsho/toggleterm.nvim", tag = '*' } -- persist and toggle multiple terminals during an editing session
     -- use "numToStr/FTerm.nvim" -- floating terminal plugin for neovim
     use "lukas-reineke/indent-blankline.nvim" -- add indent blankline
+    use "norcalli/nvim-colorizer.lua" -- color highlighter
 
     -- LSP
     use "neovim/nvim-lspconfig" -- enable LSP

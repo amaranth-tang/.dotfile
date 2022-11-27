@@ -24,7 +24,7 @@ vim.keymap.set("n", "<c-s> K", [[<cmd>lua require("tmux").resize_top()<cr>]], op
 vim.keymap.set("n", "<c-s> L", [[<cmd>lua require("tmux").resize_right()<cr>]], opts)
 
 -- toggleterm 
-vim.keymap.set("n", "<F5>", [[<cmd>TermExec cmd='python %'<cr>]], opts)
+vim.keymap.set("n", "<F5>", [[<cmd>w<cr><cmd>TermExec cmd='python %'<cr>]], opts)
 vim.keymap.set("n", "<leader><leader>c", [[<cmd>ToggleTermSendCurrentLine<cr>]], opts)
 -- keymap("n", "<leader><leader>v", [[<cmd>ToggleTermSendVisualLines <T_ID> <cr>]], opts)
 -- keymap("n", "<leader><leader>v", [[<cmd>ToggleTermSendVisualSelection <T_ID><cr>]], opts)

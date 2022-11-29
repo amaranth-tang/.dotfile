@@ -10,6 +10,51 @@ if not status_mason_lspconfig_ok then
     return
 end
 
+
+local on_attach = function(client, bufnr)
+
+    if client.name == 'pyright' then
+        client.server_capabilities.hoverProvider = true
+        client.server_capabilities.renameProvider = true
+    end
+
+    if client.name == 'pylsp' then
+        client.server_capabilities.hoverProvider = false
+        client.server_capabilities.renameProvider = false
+        client.server_capabilities.signatureHelpProvider = {}
+    end
+
+     --LSP signature
+    -- require('lsp_signature').on_attach()
+
+    -- Enable completion triggered by <c-x><c-o>
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+    -- Mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set('n', '<C-i>', vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set('n', '<space>aw', vim.lsp.buf.add_workspace_folder, bufopts)
+    vim.keymap.set('n', '<space>rw', vim.lsp.buf.remove_workspace_folder, bufopts)
+    vim.keymap.set('n', '<space>lw', function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, bufopts)
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+end
+
+local lsp_flags = {
+  -- This is the default in Nvim 0.7+
+  debounce_text_changes = 150,
+}
+
 -- local path = require('mason-core.path')
 
 mason.setup {
@@ -124,7 +169,10 @@ mason_lspconfig.setup_handlers {
     -- Next, you can provide a dedicated handler for specific servers.
     --
     function (server_name) -- default handler (optional)
-        require("lspconfig")[server_name].setup {}
+        require("lspconfig")[server_name].setup {
+            on_attach = on_attach,
+            flags = lsp_flags,
+        }
     end,
     --
     -- ["rust_analyzer"] = function ()
@@ -141,4 +189,24 @@ mason_lspconfig.setup_handlers {
             }
         }
     end,
+    ["pyright"] = function ()
+        require("lspconfig").pyright.setup {
+            settings = {
+                python = {
+                    analysis = {
+                        useLibraryCodeForTypes = true,
+                        diagnosticSeverityOverrides = {
+                            reportGeneralTypeIssues = "none",
+                            reportOptionalMemberAccess = "none",
+                            reportOptionalSubscript = "none",
+                            reportPrivateImportUsage = "none",
+                        },
+                    --     autoImportCompletions = false,
+                    -- linting = {pylintEnabled = false},
+                    }
+                }
+            }
+        }
+    end,
 }
+

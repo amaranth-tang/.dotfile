@@ -34,7 +34,7 @@ local options = {
     showmode = false,                             -- whether show things like -- INSERT --
     showtabline = 2,                              -- always show tabs
     sidescrolloff = 8,                            -- keep 8 width offset from left and right
-    signcolumn = "yes",                           -- always show the sign column, otherwise it would shift the text each time
+    signcolumn = "yes:1",                         -- always show the sign column, otherwise it would shift the text each time
     smartcase = true,                             -- smart case
     smartindent = true,                           -- make indenting smarter again
     softtabstop = 4,                              -- the number of spaces when hitting tab
@@ -51,7 +51,7 @@ local options = {
     undofile = true,                              -- enable persistent undo
     updatetime = 300,                             -- faster completion (4000ms default)
     writebackup = false,                          -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-    wrap = true,                                 -- whether display lines as one long line
+    wrap = true,                                  -- whether display lines as one long line
 
     --autoindent = true, --自动缩进
     --showcmd = true, --右下角显示命令

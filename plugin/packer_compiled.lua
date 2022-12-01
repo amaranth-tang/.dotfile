@@ -171,11 +171,6 @@ _G.packer_plugins = {
     path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["neovim-codicons"] = {
-    loaded = true,
-    path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/neovim-codicons",
-    url = "https://github.com/ChristianChiarulli/neovim-codicons"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -301,6 +296,11 @@ _G.packer_plugins = {
     path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/telescope-live-grep-args.nvim",
     url = "https://github.com/nvim-telescope/telescope-live-grep-args.nvim"
   },
+  ["telescope-vim-bookmarks.nvim"] = {
+    loaded = true,
+    path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/telescope-vim-bookmarks.nvim",
+    url = "https://github.com/tom-anders/telescope-vim-bookmarks.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -320,6 +320,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
+  },
+  ["vim-bookmarks"] = {
+    loaded = true,
+    path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/vim-bookmarks",
+    url = "https://github.com/MattesGroeger/vim-bookmarks"
   }
 }
 

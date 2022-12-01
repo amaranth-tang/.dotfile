@@ -74,8 +74,9 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
--- vim.keymap.set('n', '<leader>fc', require('telescope').extensions.dap.configurations(), {desc = "telescope.nvim"})
-vim.keymap.set('n', '<leader>fc', "<cmd>lua require('telescope').extensions.dap.configurations()<cr>", opts)
+-- vim-bookmarks
+vim.keymap.set('n', 'ma', "<cmd>lua require('telescope').extensions.vim_bookmarks.all()<cr>", opts)
+vim.keymap.set('n', 'ml', "<cmd>lua require('telescope').extensions.vim_bookmarks.current_file()<cr>", opts)
 
 
 -- hop jump anywhere

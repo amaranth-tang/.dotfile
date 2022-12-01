@@ -171,14 +171,14 @@ return require('packer').startup(function(use)
     use "nvim-telescope/telescope-dap.nvim" -- integration for nvim-dap with telescope.nvim
     use "nvim-telescope/telescope-live-grep-args.nvim" -- live grep args picker for telescope.nvim
     -- use 'nvim-telescope/telescope-ui-select.nvim'
-    --
+    use 'MattesGroeger/vim-bookmarks' -- allows toggling bookmarks per line
+    use 'tom-anders/telescope-vim-bookmarks.nvim' -- telescope picker for the vim-bookmarks plugin
 
 
     -- Debugger
     use 'mfussenegger/nvim-dap'
     use "theHamsta/nvim-dap-virtual-text" -- adds virtual text support to nvim-dap
     use "rcarriga/nvim-dap-ui" -- a UI for nvim-dap which provides a good out of the box configuration
-    use "ChristianChiarulli/neovim-codicons"
     use 'mfussenegger/nvim-dap-python'
 
 

@@ -38,7 +38,7 @@ vim.keymap.set("n", "<F3>", "<cmd>SymbolsOutline<cr>", opts)
 
 
 -- trouble
-vim.keymap.set("n", "<F9>", "<cmd>TroubleToggle<cr>", opts)
+vim.keymap.set("n", "<F4>", "<cmd>TroubleToggle<cr>", opts)
 -- vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
 --   {silent = true, noremap = true}
 -- )
@@ -74,6 +74,8 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+-- vim.keymap.set('n', '<leader>fc', require('telescope').extensions.dap.configurations(), {desc = "telescope.nvim"})
+vim.keymap.set('n', '<leader>fc', "<cmd>lua require('telescope').extensions.dap.configurations()<cr>", opts)
 
 
 -- hop jump anywhere
@@ -109,4 +111,21 @@ end, {remap=true})
 -- FTerm float terminal
 -- vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
 -- vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
+-- debug
+vim.keymap.set("n", "<F8>", "<Cmd>lua require'dap'.continue()<CR>", opts)
+vim.keymap.set("n", "<F9>", "<cmd>lua require'dap'.terminate()<cr>", opts)
+vim.keymap.set("n", "<F10>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
+vim.keymap.set("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
+vim.keymap.set("n", "<F12>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
+vim.keymap.set("n", "<Leader>b", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+vim.keymap.set("n", "<Leader>B", "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
+vim.keymap.set("n", "<Leader>db", "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
+vim.keymap.set("n", "<Leader>dr", "<Cmd>lua require'dap'.repl.open()<CR>", opts)
+vim.keymap.set("n", "<Leader>dl", "<Cmd>lua require'dap'.run_last()<CR>", opts)
+vim.keymap.set("n", "<M-k>", "<cmd>lua require'dapui'.eval()<cr>", opts)
+
+
+
+
 

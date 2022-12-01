@@ -176,6 +176,10 @@ return require('packer').startup(function(use)
 
     -- Debugger
     use 'mfussenegger/nvim-dap'
+    use "theHamsta/nvim-dap-virtual-text" -- adds virtual text support to nvim-dap
+    use "rcarriga/nvim-dap-ui" -- a UI for nvim-dap which provides a good out of the box configuration
+    use "ChristianChiarulli/neovim-codicons"
+    use 'mfussenegger/nvim-dap-python'
 
 
     -- Git
@@ -183,7 +187,7 @@ return require('packer').startup(function(use)
       'lewis6991/gitsigns.nvim',
         -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
     }
-    use 'sindrets/diffview.nvim'
+    -- use 'sindrets/diffview.nvim'
 
 
 

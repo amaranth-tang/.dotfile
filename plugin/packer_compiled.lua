@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["diffview.nvim"] = {
-    loaded = true,
-    path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/diffview.nvim",
-    url = "https://github.com/sindrets/diffview.nvim"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -176,6 +171,11 @@ _G.packer_plugins = {
     path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neovim-codicons"] = {
+    loaded = true,
+    path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/neovim-codicons",
+    url = "https://github.com/ChristianChiarulli/neovim-codicons"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -200,6 +200,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-python"] = {
+    loaded = true,
+    path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/nvim-dap-python",
+    url = "https://github.com/mfussenegger/nvim-dap-python"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-dap-virtual-text"] = {
+    loaded = true,
+    path = "/home/amaranth/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
+    url = "https://github.com/theHamsta/nvim-dap-virtual-text"
   },
   ["nvim-lastplace"] = {
     loaded = true,

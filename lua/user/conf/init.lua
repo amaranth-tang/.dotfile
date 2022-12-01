@@ -12,6 +12,7 @@ M.setup = function()
         'bufferline',
         'filetype',
         'FTerm',
+        'diffview'
     }
 
     local helper_set = {}

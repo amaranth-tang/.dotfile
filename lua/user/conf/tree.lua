@@ -172,8 +172,8 @@ nvim_tree.setup{
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
-    update_root = false,
+    enable = true,
+    update_root = true,
     ignore_list = {},
   },
   ignore_ft_on_setup = {},
@@ -182,8 +182,8 @@ nvim_tree.setup{
     args = {},
   },
   diagnostics = {
-    enable = false,
-    show_on_dirs = false,
+    enable = true,
+    show_on_dirs = true,
     debounce_delay = 50,
     icons = {
       hint = "",
